@@ -4,7 +4,7 @@ provider "aws" {
 
 module "vpc" {
 	  source  = "terraform-aws-modules/vpc/aws"
-	  version = "5.1.2"
+	  version = "5.1.2"     # Update only after verifying module compatibility
 
 	  name = "eks-vpc"
 	  cidr = "10.0.0.0/16"
@@ -20,10 +20,10 @@ module "vpc" {
 
 module "eks" {
 	  source  = "terraform-aws-modules/eks/aws"
-	  version = "19.21.0"
+	  version = "19.21.0"   # Update only after verifying module compatibility
 
 	  cluster_name    = "gitops-eks"
-	  cluster_version = "1.27"
+	  cluster_version = "1.28"
 
 	  subnet_ids = module.vpc.private_subnets
 	  vpc_id     = module.vpc.vpc_id
