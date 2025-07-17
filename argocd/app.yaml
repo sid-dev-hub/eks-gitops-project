@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/sid-dev-hub/eks-gitops-project.git
     targetRevision: HEAD
-    path: manifests
+    path: manifests/
   destination:
     server: https://kubernetes.default.svc
     namespace: default
